@@ -32,7 +32,7 @@ Downloaded 2023 taxi data in parquet format from the url using python requests
   ```bash
   docker exec -it <worker container_id> bash
   ```
-- Install spark and Java in the worked and make sure to point PATH variable to the locations of spark and java
+- Install spark and Java in the worker and make sure to point PATH variable to the locations of spark and java
 - Login to the shell of airflow scheduler and install pyspark using pip.
 - using the following command get the IP address of the postgreSQL container
   ```bash
@@ -50,7 +50,7 @@ Downloaded 2023 taxi data in parquet format from the url using python requests
 - If you have access to more memory, go ahead and remove the line in the source code **src.py** that says yellow_df.limit() to run the pipeline on whole dataset. I had to limit this since I'm running on my local machine and have only limited resources.
 - open your browser and go to localhost:8080 to access the airflow web UI.
 - Login and run the DAG **nyc_taxi_data** to execute the pipeline.
-- The graph og the pipeline should look like this.
+- The graph of the pipeline should look like this.
 - Once the pipeline is done executing, go back to terminal and check if the data is populated in the PostgreSQL docker container using the shell.
 - These images below is the data populated in PostgreSQL databse **nyc_taxi_data**
   
