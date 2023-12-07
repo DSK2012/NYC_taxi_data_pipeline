@@ -5,3 +5,4 @@ logs
 __pycache__
 venv
 .DS_Store
+worker_with_spark.tar

@@ -16,7 +16,7 @@ def filenames_func(directory_path):
 
 def create_df(spark,file_paths):
     new_df = spark.read.parquet(file_paths[0])
-    for i in file_paths[1:5]:
+    for i in file_paths[1:]:
         new_df = new_df.\
                     union(spark.read.\
                     parquet(i))
@@ -30,7 +30,6 @@ def transformation():
     
     spark = SparkSession.builder.\
                 master('local').\
-                config("spark.driver.memory", "5g").\
                 appName('project').\
                 config("spark.jars", "/opt/airflow/config/postgresql-42.7.0.jar").\
                 getOrCreate()
@@ -248,7 +247,7 @@ def transformation():
                  'errordata']
     
     ## ordering columns in the fact table
-    fact_table = fact_table[*cols_in_order]
+    # fact_table = fact_table[*cols_in_order]
 
     ## saving tables to postgresql
     connection_string = f"jdbc:postgresql://{config['connection_params']['host']}:{config['connection_params']['port']}/{config['connection_params']['database']}"
