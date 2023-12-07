@@ -51,9 +51,12 @@ Downloaded 2023 taxi data in parquet format from the url using python requests
 - open your browser and go to localhost:8080 to access the airflow web UI.
 - Login and run the DAG **nyc_taxi_data** to execute the pipeline.
 - The graph of the pipeline should look like this.
+  ![Alt airflow pipeline](https://github.com/DSK2012/NYC_taxi_data_pipeline/blob/main/images/airflow_pipeline.jpeg)
 - Once the pipeline is done executing, go back to terminal and check if the data is populated in the PostgreSQL docker container using the shell.
 - These images below is the data populated in PostgreSQL databse **nyc_taxi_data**
-  
+  ![Alt tables](https://github.com/DSK2012/NYC_taxi_data_pipeline/blob/main/images/tables.jpeg)
+  ![Alt table_data](https://github.com/DSK2012/NYC_taxi_data_pipeline/blob/main/images/table_data.jpeg)
+  ![Alt fact_table](https://github.com/DSK2012/NYC_taxi_data_pipeline/blob/main/images/fact_table.jpeg)
 # Next Steps
 - Implement this on cloud or use a computer resource from cloud.
 - Build a dashboard to display analytics.
