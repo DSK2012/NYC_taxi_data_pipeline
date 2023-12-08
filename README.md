@@ -23,16 +23,14 @@ Downloaded 2023 taxi data in parquet format from the url using python requests
 - Saved data into PostgreSQL running in a docker container that comes with airflow.
 
 ## Steps to run the pipeline
-- remove the line under worker that says **image : worker_with_spark**
+- Using the following link, download the worker_with_spark.tar file and load it into docker to use as image for airflow worker.
+```bash
+https://drive.google.com/file/d/1pLiUm-BmwZOC278W9QlZyOVUWfhIPGGh/view?usp=drive_link
+```
 - Start the docker containers by running the following command in the folder airflow
     ```bash
     docker-compose up -d
     ```
-- using the following command login to the shell of the worker container
-  ```bash
-  docker exec -it <worker container_id> bash
-  ```
-- Install spark and Java in the worker and make sure to point PATH variable to the locations of spark and java
 - Login to the shell of airflow scheduler and install pyspark using pip.
 - using the following command get the IP address of the postgreSQL container
   ```bash
