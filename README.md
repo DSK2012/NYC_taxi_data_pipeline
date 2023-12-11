@@ -22,6 +22,9 @@ Downloaded 2023 taxi data in parquet format from the url using python requests
 ## Loading data
 - Saved data into PostgreSQL running in a docker container that comes with airflow.
 
+# Data Model
+![Alt Datamodel](https://github.com/DSK2012/NYC_taxi_data_pipeline/blob/main/data_model.jpg)
+
 ## Steps to run the pipeline
 - Using the following link, download the worker_with_spark.tar file and load it into docker to use as image for airflow worker.
 ```bash
